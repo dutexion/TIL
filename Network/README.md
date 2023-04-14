@@ -1,7 +1,7 @@
 # Network 정리
 
 - [X] 인터넷 작동 원리
-- [ ] TCP / IP
+- [] TCP / IP
 - [ ] PORT 포트
 - [ ] DNS
 - [ ] 도메인 네임
