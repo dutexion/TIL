@@ -6,4 +6,4 @@
 - [X] DNS
 - [X] 도메인 네임
 - [X] URI
-- [ ] HTTP
+- [X] HTTP
