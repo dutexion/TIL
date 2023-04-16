@@ -4,6 +4,6 @@
 - [X] TCP / IP
 - [X] PORT 포트
 - [X] DNS
-- [ ] 도메인 네임
+- [X] 도메인 네임
 - [ ] URI
 - [ ] HTTP
