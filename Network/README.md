@@ -5,5 +5,5 @@
 - [X] PORT 포트
 - [X] DNS
 - [X] 도메인 네임
-- [ ] URI
+- [X] URI
 - [ ] HTTP
