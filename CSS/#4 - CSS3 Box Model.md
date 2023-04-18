@@ -88,3 +88,11 @@ content-box | width, height 프로퍼티 값은 content 영역을 의미한다. 
 border-box | width, height 프로퍼티 값은 content 영역, padding, border가 포함된 값을 의미한다.
 
 box-sizing 프로퍼티는 상속되지 않는다. 따라서 box-sizing 프로퍼티를 사용하도록 초기화하려면 아래와 같이 정의한다.
+```
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+```
