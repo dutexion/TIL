@@ -7,7 +7,7 @@
 - [X] 도메인 네임
 - [X] URI
 - [X] HTTP
-- [ ] OSI 7 계층
+- [] OSI 7 계층
 - [ ] 3 handshake
 - [ ] stateful, stateless
 - [ ] HTTP 메시지, 메소드, 상태코드
