@@ -9,6 +9,6 @@
 - [X] HTTP
 - [X] OSI 7 계층
 - [X] 3 handshake
-- [ ] stateful, stateless
+- [] stateful, stateless
 - [ ] HTTP 메시지, 메소드, 상태코드
 - [ ] 세션, 쿠키
