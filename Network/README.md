@@ -11,4 +11,4 @@
 - [X] 3 handshake
 - [X] stateful, stateless
 - [X] HTTP 메시지, 메소드, 상태코드
-- [ ] 세션, 쿠키
+- [] 세션, 쿠키
