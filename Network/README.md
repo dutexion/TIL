@@ -12,3 +12,4 @@
 - [X] stateful, stateless
 - [X] HTTP 메시지, 메소드, 상태코드
 - [X] 세션, 쿠키
+- [ ] CORS란?
