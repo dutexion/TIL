@@ -330,3 +330,71 @@ console.log(Object.getOwnPropertyDescriptor(foo, '_arr'));
 console.log(Object.getOwnPropertyDescriptor(Foo.prototype, 'firstElem'));
 // {get: ƒ, set: ƒ, enumerable: false, configurable: true}
 ```
+
+## 7 . 정적 메소드
+
+클래스의 정적 메소드를 정의할 때 키워드를 사용한다.   
+정적 메소드는 클래스의 인스턴스가 아닌 클래스 이름으로 호출한다.    
+따라서 클래스의 인스턴스를 생성하지 않아도 호출할 수 있다.
+
+```js
+class Foo {
+  constructor(prop) {
+    this.prop = prop;
+  }
+
+  static staticMethod() {
+    /*
+    정적 메소드는 this를 사용할 수 없다.
+    정적 메소드 내부에서 this는 클래스의 인스턴스가 아닌 클래스 자신을 가리킨다.
+    */
+    return 'staticMethod';
+  }
+
+  prototypeMethod() {
+    return this.prop;
+  }
+}
+
+// 정적 메소드는 클래스 이름으로 호출한다.
+console.log(Foo.staticMethod());
+
+const foo = new Foo(123);
+// 정적 메소드는 인스턴스로 호출할 수 없다.
+console.log(foo.staticMethod()); // Uncaught TypeError: foo.staticMethod is not a function
+```
+
+정적 메소드는 this를 사용할 수 없다.   
+일반 메소드 내부에서 this는 클래스의 인스턴스를 가리키며,   
+메소드 내부에서 this를 사용한다는 것은 클래스의 인스턴스의 생성을 전제로 하는 것이다.
+
+정적 메소드는 클래스 이름으로 호출하기 때문에 클래스의 인스턴스를 생성하지 않아도 사용할 수 있다.
+
+정적 메소드는 클래스의 인스턴스 생성없이 클래스의 이름으로 호출하며   
+클래스의 인스턴스로 호출할 수 없다고 하였다. 이유가 무엇이냐면
+
+위에서 언급했든   
+사실 **클래스도 함수이고** 기존 prototype 기반 패턴의 Syntactic sugar일 뿐이다.
+
+함수 객체는 prototype 프로퍼티를 갖는데 일반 객체의 과는 다른 것이며    
+일반 객체는 prototype 프로퍼티를 가지지 않는다.
+
+함수 객체만이 가지고 있는 **prototype 프로퍼티는 함수 객체가 생성자로 사용될 때,**    
+**이 함수를 통해 생성된 객체의 부모 역할을 하는 프로토타입 객체**를 가리킨다.   
+위 코드에서 Foo는 생성자 함수로 사용되므로 생성자 함수 Foo의 prototype 프로퍼티가 가리키는    
+프로토타입 객체는 생성자 함수 Foo를 통해 생성되는 인스턴스 foo의 부모 역할을 한다.
+
+```js
+console.log(Foo.prototype === foo.__proto__); // true
+```
+
+그리고 생성자 함수 Foo의 prototype 프로퍼티가 가리키는    
+프로토타입 객체가 가지고 있는 constructor 프로퍼티는 생성자 함수 Foo를 가리킨다.
+
+```js
+console.log(Foo.prototype.constructor === Foo); // true
+```
+
+**정적 메소드인 staticMethod는 생성자 함수 Foo의 메소드이고,**    
+**일반 메소드인 prototypeMethod는 프로토타입 객체 Foo.prototype의 메소드이다.**   
+**따라서 staticMethod는 foo에서 호출할 수 없다.**
