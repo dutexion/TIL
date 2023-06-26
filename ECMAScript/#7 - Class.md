@@ -398,3 +398,13 @@ console.log(Foo.prototype.constructor === Foo); // true
 **정적 메소드인 staticMethod는 생성자 함수 Foo의 메소드이고,**    
 **일반 메소드인 prototypeMethod는 프로토타입 객체 Foo.prototype의 메소드이다.**   
 **따라서 staticMethod는 foo에서 호출할 수 없다.**
+
+## 8 . 클래스 상속
+
+### 8.1 . extends 키워드
+
+부모 클래스를 상속받는 자식 클래스를 정의할 때 사용한다.    
+
+### 8.2 . super 키워드
+
+super 키워드는 부모 클래스를 참조할 때 또는 부모 클래스의 constructor를 호출할 때 사용한다.
