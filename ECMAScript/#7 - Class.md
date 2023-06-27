@@ -403,8 +403,8 @@ console.log(Foo.prototype.constructor === Foo); // true
 
 ### 8.1 . extends 키워드
 
-부모 클래스를 상속받는 자식 클래스를 정의할 때 사용한다.    
+부모 클래스를 **상속받는 자식 클래스를 정의**할 때 사용한다.    
 
 ### 8.2 . super 키워드
 
-super 키워드는 부모 클래스를 참조할 때 또는 부모 클래스의 constructor를 호출할 때 사용한다.
+super 키워드는 부모 클래스를 참조할 때 또는 **부모 클래스의 constructor를 호출**할 때 사용한다.
